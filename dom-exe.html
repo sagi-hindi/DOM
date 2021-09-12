@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+div {
+    padding: 40px 0px;
+}
+
+
+.stock{
+    padding: 20px;;
+}
+.love{
+    padding: 20px;
+}
+.bodyColor{
+    background: fuchsia;
+}
+
+.green{
+    background: green;
+}
+
+.red{
+    background: red;
+}
+
+.yellow{
+    background: yellow;
+}
+.purple{
+    background: purple;
+}
+     
+    </style>
+</head>
+
+<body id="mainBody">
+    <input type="button" onclick="send()" value="הזמן">
+    <div class = "stock">
+
+    </div>
+
+    <input type="button" onclick="loveMe()" value="אוהב אותי?">
+    
+    <div class="love">
+
+    </div>
+
+    <input type="button" onclick="changeColor()" value="שנה צבע">
+
+    <div>
+
+    <select onchange="backGroundColorSelect()" >
+        <option value="green">
+            green background
+
+        </option>
+        <option value="red">
+            red background
+
+        </option>
+        <option value="yellow">
+            yellow background
+
+        </option>
+        <option value="purple">
+            purple background
+        </option>
+    </select>
+</div>
+<div>
+    <input type ="button" onclick="plusOne()" value="הוסף"/>
+    <input type ="button" onclick="minusOne()" value="החסר"/>
+
+    <div class="num">
+        0
+    </div>
+</div>
+
+    
+
+
+
+
+
+
+    <script>
+        let outOfStockDiv = document.querySelector("div.stock")
+        
+         function send(){
+                outOfStockDiv.innerHTML ="מוצר זה אזל מהמלאי" 
+             }
+         
+    //------------------------------------------------------------------
+
+    let doYou = document.querySelector("div.love")
+    let love = true
+
+    function loveMe(){
+        if(love === true){
+            doYou.innerHTML = "אוהב"
+            love = false
+        }
+        else{
+            doYou.innerHTML = "לא אוהב"
+            love = true }
+    }
+ //----------------------------------------------------------------------
+
+ let body = document.getElementById("mainBody")
+ let removeColor = 0
+ function changeColor(){
+     if(removeColor===0){
+     body.classList.add("bodyColor")
+     removeColor=1
+    }
+    else{
+        body.classList.remove("bodyColor")
+        removeColor = 0 
+
+
+    }
+
+ }
+
+ //--------------------------------------------------------------------------
+
+ let select = document.querySelector("select")
+ 
+
+ function backGroundColorSelect(){
+     switch(select.value){
+         case "green" : body.className = "green"
+         break;
+         case "red" : body.className = "red"
+         break;
+         case "yellow" : body.className = select.value
+         break;
+         case "purple" : body.className = select.value
+         break;
+     }
+ }
+
+ 
+//-------------------------------------------------------------------------------
+let divNumer=document.querySelector(".num")
+
+
+function plusOne(){
+    divNumer.innerHTML++
+    
+    
+
+}
+function minusOne(){
+    divNumer.innerHTML--
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
