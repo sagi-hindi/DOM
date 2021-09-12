@@ -82,6 +82,12 @@ div {
     </div>
 </div>
 
+
+<input type="text" class="nameMail"/>
+<input type="button" value="checkMail" onclick="checkMails()"/>
+<div class = "message">
+
+</div>
     
 
 
@@ -160,6 +166,29 @@ function plusOne(){
 function minusOne(){
     divNumer.innerHTML--
     }
+ //-------------------------------------------------------------------------------
+ 
+ let mailArray = ["shalom@gmail.com","avi@gmail.com","naor@gmail.com","nadav@gmail.com"]
+ let mailBoxText = document.querySelector(".nameMail")
+ let message = document.querySelector(".message")
+ 
+
+ function checkMails(){
+     for(let i =0; i< mailArray.length; i++){
+         if(mailArray[i] === mailBoxText.value){
+              return message.innerHTML = "מייל זה כבר קיים במערכת"
+         }
+         else return message.innerHTML = "מייל תקין"
+
+         
+     }
+        
+ }
+
+
+
+
+ 
 
 
 
